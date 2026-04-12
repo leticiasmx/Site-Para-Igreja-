@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira Igreja Batista de Timon | 65 Anos de História</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        church: {
+                            blue: '#1E3A5F',
+                            gold: '#C9A03D',
+                            light: '#F5F3F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-pattern {
+            background-image: linear-gradient(rgba(30, 58, 95, 0.75), rgba(30, 58, 95, 0.85)), url('https://tse4.mm.bing.net/th/id/OIP.lstFDvxuVeipwPtKFSLXewHaC4?pid=Api&P=0&h=180');
+            background-size: cover;
+            background-position: center;
+        }
+        .transition-smooth {
+            transition: all 0.3s ease;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Moldura melhorada para a imagem */
+        .image-frame {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.35);
+        }
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid rgba(201, 160, 61, 0.6);
+            border-radius: 1rem;
+            pointer-events: none;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .image-frame:hover::before {
+            border-width: 4px;
+            border-color: #C9A03D;
+        }
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .image-frame:hover img {
+            transform: scale(1.03);
+        }
+        /* Efeito de cópia para o PIX */
+        .copy-btn {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover {
+            background-color: #1E3A5F;
+            color: white;
+        }
+        .copy-feedback {
+            animation: fadeOut 2s ease forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+        /* Botão WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/55999984187454?text=Olá%20Silvana,%20gostaria%20de%20mais%20informações%20sobre%20o%20ministério%20infantil%20da%20igreja." 
+       target="_blank" 
+       class="whatsapp-float"
+       title="Fale com Silvana - Ministério Infantil">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header / Navegação -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-4 md:px-6 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-church text-church-blue text-3xl"></i>
+                <span class="text-xl font-bold text-church-blue">Igreja Batista<br><span class="text-sm">Timon - MA</span></span>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <ul class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+                <li><a href="#home" class="hover:text-church-blue transition-smooth">Início</a></li>
+                <li><a href="#sobre" class="hover:text-church-blue transition-smooth">Sobre</a></li>
+                <li><a href="#infantil" class="hover:text-church-blue transition-smooth">Ministério Infantil</a></li>
+                <li><a href="#celulas" class="hover:text-church-blue transition-smooth">Células</a></li>
+                <li><a href="#eventos" class="hover:text-church-blue transition-smooth">Programação</a></li>
+                <li><a href="#contato" class="hover:text-church-blue transition-smooth">Contato</a></li>
+            </ul>
+
+            <!-- Botão doação -->
+            <a href="#doacao" class="hidden md:block bg-church-gold text-white px-5 py-2 rounded-full font-semibold hover:bg-yellow-600 transition-smooth">
+                <i class="fas fa-hand-holding-heart mr-2"></i>Doe
+            </a>
+
+            <!-- Menu Mobile -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-church-blue text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+            <ul class="flex flex-col space-y-3 p-4 text-gray-700 font-semibold">
+                <li><a href="#home" class="block py-2 hover:text-church-blue">Início</a></li>
+                <li><a href="#sobre" class="block py-2 hover:text-church-blue">Sobre</a></li>
+                <li><a href="#infantil" class="block py-2 hover:text-church-blue">Ministério Infantil</a></li>
+                <li><a href="#celulas" class="block py-2 hover:text-church-blue">Células</a></li>
+                <li><a href="#eventos" class="block py-2 hover:text-church-blue">Programação</a></li>
+                <li><a href="#contato" class="block py-2 hover:text-church-blue">Contato</a></li>
+                <li><a href="#doacao" class="inline-block bg-church-gold text-white px-5 py-2 rounded-full font-semibold text-center">Doe</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 md:px-6 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Bem-vindo à</h1>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-church-gold">Primeira Igreja Batista de Timon</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">"Porque onde estiverem dois ou três reunidos em meu nome, aí estou eu no meio deles." — Mateus 18:20</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#eventos" class="bg-church-gold text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-smooth inline-block">
+                    <i class="fas fa-calendar-alt mr-2"></i>Nossa Programação
+                </a>
+                <a href="#infantil" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-church-blue transition-smooth inline-block">
+                    <i class="fas fa-child mr-2"></i>Ministério Infantil
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre com História Atualizada e Moldura Melhorada -->
+    <section id="sobre" class="py-16 md:py-20 bg-church-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-church-blue mb-3">Sobre Nossa Igreja</h2>
+                <div class="w-20 h-1 bg-church-gold mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Conheça nossa história, missão e valores</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Imagem com moldura melhorada -->
+                <div class="image-frame">
+                    <img src="https://scontent.fthe9-2.fna.fbcdn.net/v/t39.30808-6/362679657_294391096594150_1435843495405809349_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=_MOYwwJq3q0Q7kNvwHyoma_&_nc_oc=AdqjLkEO2W_J52bAhNFxR_ZL06643ZtWtdySMmQ8AYBjfJ5tEuQO0ut9Cpt0R36EqT4&_nc_zt=23&_nc_ht=scontent.fthe9-2.fna&_nc_gid=bc_9dm2sX4tm0Xfdye0YHw&_nc_ss=7a389&oh=00_Af0AJ5_dPGFa1p63NdYKh95COY57muWGbrs5BRmfUTgmKw&oe=69E189C0" alt="Primeira Igreja Batista de Timon - Templo Histórico" class="w-full h-96 object-cover">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-church-blue mb-4 flex items-center">
+                        <i class="fas fa-history text-church-gold mr-3 text-2xl"></i>
+                        Nossa História
+                    </h3>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p>
+                            A história da nossa igreja teve início em <span class="font-bold text-church-blue">1942</span>, quando a <span class="font-semibold">Primeira Igreja Batista de Teresina</span> começou os trabalhos de evangelização na cidade de Timon.
+                        </p>
+                        <p>
+                            Em <span class="font-bold text-church-blue">1954</span>, a <span class="font-semibold">irmã Ursulina de Sousa Dantas</span>, guiada por Deus, iniciou uma pequena Escola Bíblica debaixo de uma mangueira, na Avenida Getúlio Vargas. Mesmo sem estrutura, esse foi o começo de uma grande obra, dedicada à propagação do Evangelho.
+                        </p>
+                        <p>
+                            Com o passar do tempo, o trabalho cresceu, reunindo crianças e adultos. Em <span class="font-bold text-church-blue">1958</span>, o <span class="font-semibold">Pr. Gerald Seright</span> passou a cooperar com a missão, organizando o ponto de pregação. Assim, no dia <span class="font-bold text-church-blue">25 de março de 1959</span>, nasceu oficialmente a <span class="font-semibold">1ª Igreja Batista de Timon</span>.
+                        </p>
+                        <p>
+                            Após a organização, foi adquirido o terreno atual, onde foi construído o templo com apoio missionário. A inauguração aconteceu em <span class="font-bold text-church-blue">1º de janeiro de 1961</span>, marcando um novo tempo para a igreja. O templo permanece até hoje, sendo um símbolo de fé e perseverança.
+                        </p>
+                        <p>
+                            Ao longo dos anos, a igreja enfrentou desafios, mas nunca deixou de cumprir sua missão de anunciar o Evangelho. Como fruto desse trabalho, diversas congregações foram organizadas, contribuindo para o crescimento do Reino de Deus na região.
+                        </p>
+                        <p>
+                            Durante sua trajetória, vários pastores serviram com dedicação, deixando importantes contribuições. Desde <span class="font-bold text-church-blue">31 de outubro de 2015</span>, a igreja é liderada pelo <span class="font-semibold">Pr. João Pedro Andrade de Lima</span>.
+                        </p>
+                        <div class="bg-church-blue/10 p-4 rounded-lg mt-4 border-l-4 border-church-gold">
+                            <p class="italic text-gray-700">
+                                <i class="fas fa-quote-left text-church-gold mr-2"></i>
+                                Hoje, seguimos firmes, agradecendo a Deus por Sua fidelidade e honrando todos aqueles que fizeram parte dessa história — especialmente a irmã Ursulina Dantas e os pioneiros desta obra.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Gratidão Destacada -->
+            <div class="mt-12 bg-white rounded-xl p-6 shadow-md border border-church-gold/20">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-hands-praying text-church-gold text-3xl mr-3"></i>
+                    <h4 class="text-xl font-bold text-church-blue text-center">🙏 Nossa Gratidão</h4>
+                </div>
+                <p class="text-gray-700 text-center leading-relaxed">
+                    Agradecemos primeiramente a Deus, que até aqui tem nos sustentado.
+                    Também expressamos nossa gratidão à <span class="font-semibold">Primeira Igreja Batista de Teresina</span>, pela obediência em levar o Evangelho a Timon, e a todos os membros e líderes que contribuíram para a construção desta história.
+                </p>
+            </div>
+
+            <!-- Missão, Visão, Valores -->
+            <div class="grid md:grid-cols-3 gap-6 mt-16">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-smooth">
+                    <i class="fas fa-cross text-church-gold text-4xl mb-4"></i>
+                    <h4 class="text-xl font-bold text-church-blue mb-2">Missão</h4>
+                    <p class="text-gray-600">Evangelizar e discipular, levando a mensagem de salvação em Jesus Cristo a toda criatura.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-smooth">
+                    <i class="fas fa-eye text-church-gold text-4xl mb-4"></i>
+                    <h4 class="text-xl font-bold text-church-blue mb-2">Visão</h4>
+                    <p class="text-gray-600">Ser uma igreja relevante, que transforma vidas e impacta a comunidade com o amor de Deus.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-smooth">
+                    <i class="fas fa-heart text-church-gold text-4xl mb-4"></i>
+                    <h4 class="text-xl font-bold text-church-blue mb-2">Valores</h4>
+                    <p class="text-gray-600">Fé, amor, unidade, serviço, integridade e adoração a Deus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MINISTÉRIO INFANTIL (NOVA) -->
+    <section id="infantil" class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-church-blue mb-3">
+                    <i class="fas fa-child text-church-gold mr-3"></i>
+                    Ministério Infantil
+                </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Cards do Ministério Infantil -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-smooth">
+                    <div class="bg-church-blue text-white p-5 text-center">
+                        <i class="fas fa-chalkboard-user text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">Culto Infantil</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Dispomos de uma sala especialmente preparada e equipada para receber as crianças com segurança, conforto e muito amor. 
+                            O ambiente é adequado para que os pequenos aprendam sobre Jesus de forma lúdica e divertida.
+                        </p>
+                        <div class="inline-flex items-center bg-church-gold/20 px-4 py-2 rounded-full">
+                        <i class="fas fa-clock text-church-gold mr-2"></i>
+                        <span class="font-semibold">Domingo - 9h e 18:30h(simultâneo ao culto de edificação e culto de celebração)</span>
+                    </div>
+                        <div class="flex items-center gap-2 text-church-blue">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Espaço climatizado</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-church-blue mt-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Brinquedos e materiais pedagógicos</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-church-blue mt-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Equipe treinada e voluntária</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-smooth">
+                    <div class="bg-church-gold text-white p-5 text-center">
+                        <i class="fas fa-baby-carriage text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">Berçário</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Nosso berçário acolhe bebês de 0 a 4 anos com todo cuidado e dedicação. 
+                            As mamães podem participar dos cultos tranquilas, sabendo que seus pequenos estão em boas mãos.
+                        </p>
+                           <div class="inline-flex items-center bg-church-gold/20 px-4 py-2 rounded-full">
+                        <i class="fas fa-clock text-church-gold mr-2"></i>
+                        <span class="font-semibold">Domingo - 9h e 18:30h(simultâneo ao culto de edificação e culto de celebração)</span>
+                    </div>
+                        <div class="flex items-center gap-2 text-church-blue">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ambiente aconchegante e seguro</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-church-blue mt-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cuidadores experientes</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-church-blue mt-2">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Materiais higienizados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsável e Contato -->
+            <div class="mt-10 max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-church-blue rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-circle text-white text-4xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-church-blue">Responsável pelo Ministério Infantil</h4>
+                            <p class="text-gray-600 text-lg font-semibold">Silvana</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <a href="https://wa.me/55999984187454?text=Olá%20Silvana,%20gostaria%20de%20mais%20informações%20sobre%20o%20ministério%20infantil%20da%20igreja." 
+                           target="_blank"
+                           class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-smooth flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            (99) 99841-87454
+                        </a>
+                        <button onclick="copiarTelefone()" class="text-church-blue text-sm hover:underline flex items-center gap-1">
+                            <i class="fas fa-copy"></i> Copiar número
+                        </button>
+                    </div>
+                </div>
+                <p class="text-center text-gray-500 text-sm mt-4">
+                    <i class="fas fa-info-circle text-church-gold"></i>
+                    Entre em contato para saber mais sobre o ministério infantil, matrículas ou voluntariado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção DOAÇÕES -->
+    <section id="doacao" class="py-16 md:py-20 bg-gradient-to-br from-church-blue/5 to-church-gold/10">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-church-blue mb-3">Contribua com a Obra</h2>
+                <div class="w-20 h-1 bg-church-gold mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Sua doação ajuda a manter os trabalhos da igreja e a levar o Evangelho a mais pessoas</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- PIX -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-smooth">
+                    <div class="bg-church-blue text-white p-5 text-center">
+                        <i class="fas fa-qrcode text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">PIX</h3>
+                        <p class="text-sm opacity-90">Doação instantânea e segura</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-church-gold/30">
+                            <p class="text-sm text-gray-500 mb-1">Chave PIX (CNPJ)</p>
+                            <div class="flex items-center justify-between gap-3 flex-wrap">
+                                <code class="text-lg font-mono font-bold text-church-blue break-all">06.651.145/0001-39</code>
+                                <button onclick="copiarPix()" class="copy-btn bg-church-blue/10 text-church-blue px-4 py-2 rounded-lg font-semibold text-sm hover:bg-church-blue hover:text-white transition-smooth">
+                                    <i class="fas fa-copy mr-1"></i> Copiar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-center text-sm text-gray-500">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>PIX registrado no CNPJ da Igreja</span>
+                        </div>
+                        <div id="pix-feedback" class="hidden mt-3 text-center text-green-600 font-semibold text-sm"></div>
+                    </div>
+                </div>
+
+                <!-- Conta Bancária -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-smooth">
+                    <div class="bg-church-gold text-white p-5 text-center">
+                        <i class="fas fa-university text-4xl mb-2"></i>
+                        <h3 class="text-2xl font-bold">Transferência Bancária</h3>
+                        <p class="text-sm opacity-90">Caixa Econômica Federal</p>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-600 font-semibold">Banco:</span>
+                            <span class="text-gray-800">Caixa Econômica Federal (CEF)</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-600 font-semibold">Operação:</span>
+                            <span class="text-gray-800 font-mono">003</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-600 font-semibold">Agência:</span>
+                            <span class="text-gray-800 font-mono">2442</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-600 font-semibold">Conta Corrente:</span>
+                            <span class="text-gray-800 font-mono">2478-7</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-600 font-semibold">Favorecido:</span>
+                            <span class="text-gray-800">PIB Timon</span>
+                        </div>
+                        <div class="mt-4 pt-3 text-center">
+                            <button onclick="copiarConta()" class="copy-btn bg-church-gold/20 text-church-gold px-5 py-2 rounded-lg font-semibold text-sm hover:bg-church-gold hover:text-white transition-smooth w-full">
+                                <i class="fas fa-copy mr-2"></i> Copiar dados bancários
+                            </button>
+                        </div>
+                        <div id="conta-feedback" class="hidden mt-3 text-center text-green-600 font-semibold text-sm"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Versículo de motivação -->
+            <div class="text-center mt-10 max-w-2xl mx-auto">
+                <p class="text-gray-500 italic text-sm">
+                    <i class="fas fa-bible text-church-gold mr-2"></i>
+                    "Cada um dê conforme determinou em seu coração, não com tristeza ou por necessidade, porque Deus ama quem dá com alegria." — 2 Coríntios 9:7
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Células -->
+    <section id="celulas" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-church-blue mb-3">Nossas Células</h2>
+                <div class="w-20 h-1 bg-church-gold mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Uma igreja formada em pequenos grupos que se reúnem para crescer juntos na fé</p>
+            </div>
+
+            <div class="bg-church-light rounded-xl p-8 max-w-4xl mx-auto mb-12">
+                <div class="text-center mb-6">
+                    <i class="fas fa-home text-church-gold text-5xl mb-3"></i>
+                    <h3 class="text-2xl font-bold text-church-blue">O que são as Células?</h3>
+                </div>
+                <p class="text-gray-700 text-center mb-4 leading-relaxed">
+                    As células são pequenos grupos que se reúnem semanalmente nas casas dos membros para estudo da Bíblia, oração e comunhão. 
+                    É um espaço acolhedor onde podemos crescer juntos, compartilhar nossas vidas e experimentar o amor de Deus de forma mais próxima.
+                </p>
+                <p class="text-gray-700 text-center font-semibold">
+                    "Cada um cuide não somente dos seus interesses, mas também dos interesses dos outros." - Filipenses 2:4
+                </p>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-gray-600 mb-4">Quer participar de uma célula perto da sua casa?</p>
+                <a href="#contato" class="inline-block bg-church-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-smooth">
+                    <i class="fas fa-envelope mr-2"></i>Entre em contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Programação -->
+    <section id="eventos" class="py-16 md:py-20 bg-church-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-church-blue mb-3">Programação Semanal</h2>
+                <div class="w-20 h-1 bg-church-gold mx-auto"></div>
+                <p class="text-gray-600 mt-4">Venha participar dos nossos cultos e células</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Cultos -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="bg-church-blue text-white p-4">
+                        <h3 class="text-xl font-bold"><i class="fas fa-church mr-2"></i>Cultos da Semana</h3>
+                    </div>
+                    <div class="p-4 divide-y">
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-semibold">Domingo - Manhã</span>
+                            <span class="text-gray-600">9h - Culto de Edificação</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-semibold">Domingo - Noite</span>
+                            <span class="text-gray-600">18h30 - Culto de Celebração</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-semibold">Quinta-feira</span>
+                            <span class="text-gray-600">19h - Culto de Oração e Doutrina</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Células -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="bg-church-blue text-white p-4">
+                        <h3 class="text-xl font-bold"><i class="fas fa-home mr-2"></i>Horário das Células</h3>
+                    </div>
+                    <div class="p-4 divide-y">
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-semibold">Terça-feira</span>
+                            <span class="text-gray-600">19h30 - Célula de Casais</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-semibold">Sábado</span>
+                            <span class="text-gray-600">17h30 - Célula de Jovens</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="font-semibold">Sábado</span>
+                            <span class="text-gray-600">17h - Célula Infantil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Próximos Eventos -->
+            <div class="mt-10 bg-church-blue rounded-xl p-6 text-center text-white max-w-4xl mx-auto">
+                <i class="fas fa-calendar-alt text-4xl mb-3"></i>
+                <h3 class="text-2xl font-bold mb-2">Próximos Eventos Especiais</h3>
+                <div class="grid md:grid-cols-3 gap-4 mt-4">
+                    <div>
+                        <p class="font-semibold">📅 21 de Abril</p>
+                        <p class="text-sm">Encontro de Jovens</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-church-blue mb-3">Entre em Contato</h2>
+                <div class="w-20 h-1 bg-church-gold mx-auto"></div>
+                <p class="text-gray-600 mt-4">Estamos aqui para ouvir você e sua família</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Informações de Contato -->
+                <div>
+                    <div class="bg-church-light p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold text-church-blue mb-6">Informações</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-map-marker-alt text-church-gold text-xl mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Endereço</p>
+                                    <p class="text-gray-600">Avenida Jaime Rios, 488 - Parque Piauí, Timon - MA</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-phone-alt text-church-gold text-xl mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Telefone</p>
+                                    <p class="text-gray-600">(99) 99841-8745 (Ministério Infantil)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-clock text-church-gold text-xl mt-1"></i>
+                                <div>
+                                    <p class="font-semibold">Horário dos Cultos</p>
+                                    <p class="text-gray-600">Domingo: 9h e 18h30 | Quinta: 19h</p>
+                                    <p class="text-sm text-church-blue mt-1">Culto Infantil: Domingo 9h</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Redes Sociais -->
+                        <div class="mt-8">
+                            <h4 class="font-bold text-church-blue mb-3">Redes Sociais</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://www.instagram.com/pibtimon" target="_blank" class="w-10 h-10 bg-church-blue rounded-full flex items-center justify-center text-white hover:bg-church-gold transition-smooth">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.instagram.com/pib.cast" target="_blank" class="w-10 h-10 bg-church-blue rounded-full flex items-center justify-center text-white hover:bg-church-gold transition-smooth">
+                                    <i class="fas fa-podcast"></i>
+                                </a>
+                                <a href="https://youtube.com/@pibtimon" target="_blank" class="w-10 h-10 bg-church-blue rounded-full flex items-center justify-center text-white hover:bg-church-gold transition-smooth">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://wa.me/55999984187454" target="_blank" class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-smooth">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            <div class="mt-3 text-sm text-gray-500">
+                                <p>📱 Instagram: @pibtimon</p>
+                                <p>🎙️ Podcast: @pib.cast</p>
+                                <p>▶️ YouTube: @pibtimon</p>
+                                <p>💬 WhatsApp: (99) 99841-8745 (Silvana - Ministério Infantil)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div>
+                    <div class="bg-church-light p-6 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold text-church-blue mb-4 text-center">Onde Estamos</h3>
+                        <div class="rounded-lg overflow-hidden h-64 shadow-md">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.0528611092263!2d-42.83002832525835!3d-5.095156094881792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78e37832aca8cf7%3A0x948fbd60031cab60!2sPrimeira%20Igreja%20Batista%20Timon!5e0!3m2!1spt-PT!2sbr!4v1776015868512!5m2!1spt-PT!2sbr" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <p class="text-center text-gray-600 mt-3">Avenida Jaime Rios, 488 - Parque Piauí, Timon - MA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-church-blue text-white py-8">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <div class="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                        <i class="fas fa-church text-2xl"></i>
+                        <span class="text-xl font-bold">Primeira Igreja Batista de Timon</span>
+                    </div>
+                    <p class="text-sm opacity-75">"Crescendo na graça e no conhecimento de Deus"</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-sm opacity-75">Av. Jaime Rios, 488 - Parque Piauí, Timon - MA</p>
+                    <p class="text-xs opacity-50 mt-1">CNPJ: 06.651.145/0001-39 | Fundada em 25 de março de 1959</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Menu Mobile e Funções de Cópia -->
+    <script>
+        // Menu Mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Função para copiar PIX
+        function copiarPix() {
+            const pixChave = "06.651.145/0001-39";
+            navigator.clipboard.writeText(pixChave).then(() => {
+                const feedback = document.getElementById('pix-feedback');
+                feedback.textContent = '✓ Chave PIX copiada!';
+                feedback.classList.remove('hidden');
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                    feedback.textContent = '';
+                }, 2000);
+            });
+        }
+
+        // Função para copiar dados da conta
+        function copiarConta() {
+            const dadosConta = `Banco: Caixa Econômica Federal (CEF)
+Operação: 003
+Agência: 2442
+Conta Corrente: 2478-7
+Favorecido: PIB Timon
+CNPJ: 06.651.145/0001-39`;
+            navigator.clipboard.writeText(dadosConta).then(() => {
+                const feedback = document.getElementById('conta-feedback');
+                feedback.textContent = '✓ Dados bancários copiados!';
+                feedback.classList.remove('hidden');
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                    feedback.textContent = '';
+                }, 2000);
+            });
+        }
+
+        // Função para copiar telefone
+        function copiarTelefone() {
+            const telefone = "99 99841-87454";
+            navigator.clipboard.writeText(telefone).then(() => {
+                alert("Número de telefone copiado: " + telefone);
+            });
+        }
+    </script>
+</body>
+</html>
