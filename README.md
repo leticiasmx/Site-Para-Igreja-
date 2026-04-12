@@ -1,8 +1,7 @@
-# 🙏 PIB Timon - Site Institucional
+# 🙏 Primeira Igreja Batista de Timon - Site 
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 ## 📋 Sobre
 
@@ -12,7 +11,6 @@ Site institucional da **Primeira Igreja Batista de Timon (MA)** com história, p
 
 - HTML5
 - TailwindCSS
-- JavaScript
 - Font Awesome 6
 
 ## 📱 Funcionalidades
