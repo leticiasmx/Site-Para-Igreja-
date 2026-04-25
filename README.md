@@ -18,7 +18,7 @@ Site institucional da **Primeira Igreja Batista de Timon (MA)** com história, p
 - Design responsivo
 - Menu mobile
 - História completa (1942-2025)
-- Ministério Infantil (Silvana: 99 99841-87454)
+- Ministério Infantil 
 - Doações via PIX e transferência
 - Botão copiar dados
 - WhatsApp flutuante
@@ -31,45 +31,6 @@ Site institucional da **Primeira Igreja Batista de Timon (MA)** com história, p
 | Azul | `#1E3A5F` |
 | Dourado | `#C9A03D` |
 | Fundo | `#F5F3F0` |
-
-## 📞 Contatos
-
-| Setor | Contato |
-|-------|---------|
-| Ministério Infantil | (99) 99841-87454 (Silvana) |
-| Instagram | @pibtimon |
-| YouTube | @pibtimon |
-
-## 💰 Doações
-
-**PIX:** `06.651.145/0001-39`
-
-**Banco:** Caixa Econômica Federal
-- Agência: 2442
-- Conta: 2478-7
-- Operação: 003
-
-## 🏛️ Informações
-
-- **Fundação:** 25/03/1959
-- **CNPJ:** 06.651.145/0001-39
-- **Endereço:** Av. Jaime Rios, 488 - Parque Piauí, Timon - MA
-- **Pastor:** Pr. João Pedro Andrade de Lima
-
-## 📅 Programação
-
-| Dia | Horário | Evento |
-|-----|---------|--------|
-| Domingo | 9h | Culto de Edificação + Culto Infantil |
-| Domingo | 18h30 | Culto de Celebração |
-| Quinta | 19h | Culto de Oração |
-
-## 🧸 Ministério Infantil
-
-- Sala para crianças
-- Berçário (0-2 anos)
-- Culto Infantil (domingo 9h)
-- Responsável: Silvana
 
 #Autora
 Letícia Moura @leletcode
